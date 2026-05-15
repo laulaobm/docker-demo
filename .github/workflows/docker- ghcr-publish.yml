@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE: ghcr.io/${{ github.repository }}
+  IMAGE: ghcr.io/${{ github.repository_owner }}/docker-spring-demo
 
 jobs:
   build-and-push:
@@ -30,6 +30,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: ./docker-compose.yml
           push: true
           tags: |
             ${{ env.IMAGE }}:latest
