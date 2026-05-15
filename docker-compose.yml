@@ -1,12 +1,21 @@
 services:
+  # Definiert Main Service der Anwendung
   app:
+    # Umgebungsvariable für Image Name
     image: ${IMAGE}
+    # Build Config
     build:
+      # setzt aktuelles Verzeichnis als Buildverzeichnis
       context: .
+      # nutzt Dockerfile für den Build
       dockerfile: Dockerfile
+    # Container Bennennung
     container_name: docker-spring-demo
+    # Port Mapping von Host 8080 zu Container 8080
     ports:
       - "8080:8080"
+    # Profil für Development
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+    # Container wird automatisch neu gestartet
     restart: unless-stopped
