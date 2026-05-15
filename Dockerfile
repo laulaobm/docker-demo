@@ -10,7 +10,7 @@ COPY src ./src
 # Package app
 RUN mvn clean package
 
-# Stage 2:
+# Stage 2: Runtime
 # Base Image for Java 24
 FROM eclipse-temurin:24-alpine
 # Define WORKDIR
