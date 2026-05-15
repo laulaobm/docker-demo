@@ -1,6 +1,6 @@
 services:
   app:
-    image: ${IMAGE:-docker-spring-demo}
+    image: ${IMAGE}
     build:
       context: .
       dockerfile: Dockerfile
