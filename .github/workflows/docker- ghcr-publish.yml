@@ -26,11 +26,9 @@ jobs:
         run: |
           REPO=ghcr.io/${{ github.repository_owner }}/docker-spring-demo
           
-          # Build & Tag für 'latest'
           IMAGE=$REPO:latest docker compose build app
           docker push $REPO:latest
           
-          # Falls ein Release-Tag vorhanden ist
           if [[ "${{ github.ref }}" == refs/tags/* ]]; then
             TAG=${{ github.ref_name }}
             IMAGE=$REPO:$TAG docker compose build app

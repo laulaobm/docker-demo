@@ -19,14 +19,11 @@ jobs:
 
       - name: Build and Push
         run: |
-          # Wir definieren den Namen einmal hier
           REPO=${{ secrets.DOCKERHUB_USERNAME }}/docker-spring-demo
           
-          # Build & Tag für 'latest'
           IMAGE=$REPO:latest docker compose build app
           docker push $REPO:latest
           
-          # Wenn es ein Tag (v1.0.0 etc.) ist, auch diesen pushen
           if [[ "${{ github.ref }}" == refs/tags/* ]]; then
             TAG=${{ github.ref_name }}
             IMAGE=$REPO:$TAG docker compose build app
