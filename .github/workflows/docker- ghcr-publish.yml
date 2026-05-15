@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE: ghcr.io/${{ github.repository_owner }}/docker-spring-demo
+  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/docker-spring-demo
   COMPOSE_FILE: docker-compose.yml
 
 jobs:

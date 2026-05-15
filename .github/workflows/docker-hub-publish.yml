@@ -6,7 +6,7 @@ on:
     tags: [ 'v*.*.*' ]
 
 env:
-  DOCKERHUB_REPO: ${{ secrets.DOCKERHUB_USERNAME }}/docker-spring-demo
+  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/docker-spring-demo
   COMPOSE_FILE: docker-compose.yml
 
 jobs:
